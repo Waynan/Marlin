@@ -175,10 +175,10 @@
   // When using any TMC SPI-based drivers, software SPI is used
   // because pins may be shared with the display or SD card.
   #define TMC_USE_SW_SPI
-  #define TMC_SW_MOSI       P1_15
-  #define TMC_SW_MISO       P1_14
+  #define TMC_SW_MOSI       P1_15 //8
+  #define TMC_SW_MISO       P1_14 //7
   // To minimize pin usage use the same clock pin as the display/SD card reader. (May generate LCD noise.)
-  #define TMC_SW_SCK        P1_10
+  #define TMC_SW_SCK        P1_10 //6
   // If pin 2_06 is unused, it can be used for the clock to avoid the LCD noise.
   //#define TMC_SW_SCK        P2_06
 
@@ -187,32 +187,32 @@
     // Software enable allows the enable pins to be repurposed as chip-select pins.
     // Note: Requires the driver modules to be modified to always be enabled with the enable pin removed.
     #if AXIS_DRIVER_TYPE_X(TMC2130)
-      #define X_CS_PIN         P1_9
+      #define X_CS_PIN         P1_9 //5
       #undef  X_ENABLE_PIN
       #define X_ENABLE_PIN     -1
     #endif
 
     #if AXIS_DRIVER_TYPE_Y(TMC2130)
-      #define Y_CS_PIN         P1_8
+      #define Y_CS_PIN         P1_8 //4
       #undef  Y_ENABLE_PIN
       #define Y_ENABLE_PIN     -1
     #endif
 
     #if AXIS_DRIVER_TYPE_Z(TMC2130)
-      #define Z_CS_PIN         P1_4
+      #define Z_CS_PIN         P1_4 //3
       #undef  Z_ENABLE_PIN
       #define Z_ENABLE_PIN     -1
     #endif
 
     #if AXIS_DRIVER_TYPE_E0(TMC2130)
-      #define E0_CS_PIN        P1_1
+      #define E0_CS_PIN        P1_1 //2
       #undef  E0_ENABLE_PIN
       #define E0_ENABLE_PIN    -1
     #endif
 
 
     #if AXIS_DRIVER_TYPE_E1(TMC2130)
-      #define E1_CS_PIN        P1_0
+      #define E1_CS_PIN        P1_0 //1
       #undef  E1_ENABLE_PIN
       #define E1_ENABLE_PIN    -1
     #endif
